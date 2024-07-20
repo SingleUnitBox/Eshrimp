@@ -6,6 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="module.development.tanks.json" />
+    <None Remove="module.tanks.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="module.tanks.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="module.development.tanks.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Eshrimp.Modules.Tanks.Infrastructure\Eshrimp.Modules.Tanks.Infrastructure.csproj" />
   </ItemGroup>
 
