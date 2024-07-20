@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Shared\Eshrimp.Shared.Abstractions\Eshrimp.Shared.Abstractions.csproj" />
+    <ProjectReference Include="..\Eshrimp.Shared.Abstractions\Eshrimp.Shared.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

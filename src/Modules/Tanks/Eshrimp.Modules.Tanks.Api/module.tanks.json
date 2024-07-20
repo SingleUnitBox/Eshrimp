@@ -1,0 +1,8 @@
+{
+  "tanks": {
+    "module": {
+      "name": "Tanks",
+      "enabled": true
+    }
+  }
+}

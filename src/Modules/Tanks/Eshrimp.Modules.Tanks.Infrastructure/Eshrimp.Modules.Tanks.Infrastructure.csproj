@@ -3,7 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Eshrimp.Shared.Infrastructure\Eshrimp.Shared.Infrastructure.csproj" />
+    <ProjectReference Include="..\Eshrimp.Modules.Tanks.Application\Eshrimp.Modules.Tanks.Application.csproj" />
+  </ItemGroup>
 
 </Project>
