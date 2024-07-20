@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Eshrimp.Modules.Tanks.Infrastructure\Eshrimp.Modules.Tanks.Infrastructure.csproj" />
-  </ItemGroup>
-
 </Project>

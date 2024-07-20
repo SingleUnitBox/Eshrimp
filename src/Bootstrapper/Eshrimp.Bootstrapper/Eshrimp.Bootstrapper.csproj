@@ -5,4 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Tanks\Eshrimp.Modules.Tanks.Api\Eshrimp.Modules.Tanks.Api.csproj" />
+  </ItemGroup>
+
 </Project>

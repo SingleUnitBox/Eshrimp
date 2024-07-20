@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Eshrimp.Modules.Tanks.Infrastructure\Eshrimp.Modules.Tanks.Infrastructure.csproj" />
+    <ProjectReference Include="..\Eshrimp.Shared.Abstractions\Eshrimp.Shared.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -15,15 +15,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4C54DA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eshrimp.Bootstrapper", "src\Bootstrapper\Eshrimp.Bootstrapper\Eshrimp.Bootstrapper.csproj", "{1751B316-5409-4FE4-AA90-682739FB5221}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshrimp.Modules.Tanks.Api", "src\Modules\Tanks\Eshrimp.Modules.Tanks.Api\Eshrimp.Modules.Tanks.Api.csproj", "{15346167-A369-44E7-95ED-A5FF178601C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eshrimp.Modules.Tanks.Api", "src\Modules\Tanks\Eshrimp.Modules.Tanks.Api\Eshrimp.Modules.Tanks.Api.csproj", "{15346167-A369-44E7-95ED-A5FF178601C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tanks", "Tanks", "{EB437180-9199-401F-AF54-28D431BAC653}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshrimp.Modules.Tanks.Domain", "src\Modules\Tanks\Eshrimp.Modules.Tanks.Domain\Eshrimp.Modules.Tanks.Domain.csproj", "{5D606E0E-03F7-41AE-835B-C5D355EB4130}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eshrimp.Modules.Tanks.Domain", "src\Modules\Tanks\Eshrimp.Modules.Tanks.Domain\Eshrimp.Modules.Tanks.Domain.csproj", "{5D606E0E-03F7-41AE-835B-C5D355EB4130}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshrimp.Modules.Tanks.Application", "src\Modules\Tanks\Eshrimp.Modules.Tanks.Application\Eshrimp.Modules.Tanks.Application.csproj", "{E07BDEAD-A192-4093-B5CA-97B300A472A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eshrimp.Modules.Tanks.Application", "src\Modules\Tanks\Eshrimp.Modules.Tanks.Application\Eshrimp.Modules.Tanks.Application.csproj", "{E07BDEAD-A192-4093-B5CA-97B300A472A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshrimp.Modules.Tanks.Infrastructure", "src\Modules\Tanks\Eshrimp.Modules.Tanks.Infrastructure\Eshrimp.Modules.Tanks.Infrastructure.csproj", "{51EC4E99-AE5F-4C58-892C-D1BC96B200CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eshrimp.Modules.Tanks.Infrastructure", "src\Modules\Tanks\Eshrimp.Modules.Tanks.Infrastructure\Eshrimp.Modules.Tanks.Infrastructure.csproj", "{51EC4E99-AE5F-4C58-892C-D1BC96B200CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshrimp.Shared.Abstractions", "src\Shared\Eshrimp.Shared.Abstractions\Eshrimp.Shared.Abstractions.csproj", "{24D72853-0513-412F-A622-C1684F331D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshrimp.Shared.Infrastructure", "src\Shared\Eshrimp.Shared.Infrastructure\Eshrimp.Shared.Infrastructure.csproj", "{F04BA12A-0765-4F5F-AE35-B8168493E496}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{51EC4E99-AE5F-4C58-892C-D1BC96B200CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51EC4E99-AE5F-4C58-892C-D1BC96B200CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51EC4E99-AE5F-4C58-892C-D1BC96B200CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24D72853-0513-412F-A622-C1684F331D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D72853-0513-412F-A622-C1684F331D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D72853-0513-412F-A622-C1684F331D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D72853-0513-412F-A622-C1684F331D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04BA12A-0765-4F5F-AE35-B8168493E496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04BA12A-0765-4F5F-AE35-B8168493E496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04BA12A-0765-4F5F-AE35-B8168493E496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04BA12A-0765-4F5F-AE35-B8168493E496}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +77,8 @@ Global
 		{5D606E0E-03F7-41AE-835B-C5D355EB4130} = {EB437180-9199-401F-AF54-28D431BAC653}
 		{E07BDEAD-A192-4093-B5CA-97B300A472A5} = {EB437180-9199-401F-AF54-28D431BAC653}
 		{51EC4E99-AE5F-4C58-892C-D1BC96B200CA} = {EB437180-9199-401F-AF54-28D431BAC653}
+		{24D72853-0513-412F-A622-C1684F331D9A} = {4C54DAB0-0CA3-4163-9E17-B9D55612E973}
+		{F04BA12A-0765-4F5F-AE35-B8168493E496} = {4C54DAB0-0CA3-4163-9E17-B9D55612E973}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {54651B3D-45FD-451D-8AED-758D71A88891}
