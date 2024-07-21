@@ -1,12 +1,10 @@
 using Eshrimp.Modules.Tanks.Api;
-using Eshrimp.Modules.Tanks.Domain.Exceptions;
-using Eshrimp.Shared.Abstractions.Exceptions;
 using Eshrimp.Shared.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddInfrastructure();
-builder.Services.AddTanks();
+builder.Services.AddTanks(builder.Configuration);
 
 var app = builder.Build();
 

@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Eshrimp.Bootstrapper")]
+[assembly: InternalsVisibleTo("Eshrimp.Modules.Tanks.Infrastructure")]
 namespace Eshrimp.Shared.Infrastructure
 {
     internal static class Extensions
