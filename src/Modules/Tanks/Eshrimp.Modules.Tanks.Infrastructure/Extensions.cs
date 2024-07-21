@@ -10,11 +10,10 @@ namespace Eshrimp.Modules.Tanks.Infrastructure
 {
     internal static class Extensions
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services,
-            IConfiguration configuration)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddErrorHandling();
-            services.AddPostgres<TanksDbContext>(configuration);
+            services.AddPostgres<TanksDbContext>();
 
             return services;
         }

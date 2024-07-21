@@ -28,7 +28,6 @@ namespace Eshrimp.Shared.Infrastructure.Services
                 .ToArray();
 
             var tasks = new List<Task>();
-
             using var scope = _serviceProvider.CreateScope();
             {
                 foreach (var dbContextType in dbContextTypes)

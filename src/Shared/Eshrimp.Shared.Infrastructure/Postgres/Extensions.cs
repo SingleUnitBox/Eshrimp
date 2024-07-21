@@ -16,10 +16,10 @@ namespace Eshrimp.Shared.Infrastructure.Postgres
             return services;
         }
 
-        public static IServiceCollection AddPostgres<TDbContext>(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPostgres<TDbContext>(this IServiceCollection services)
             where TDbContext : DbContext
         {
-            var postgresOptions = GetOptions<PostgresOptions>(configuration, PostgresSection);
+            var postgresOptions = services.GetOptions<PostgresOptions>(PostgresSection);
             services.AddDbContext<TDbContext>(options =>
             {
                 options.UseNpgsql(postgresOptions.ConnectionString);
