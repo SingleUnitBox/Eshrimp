@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Eshrimp.Modules.Tanks.Application\Eshrimp.Modules.Tanks.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+
 </Project>

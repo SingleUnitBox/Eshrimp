@@ -18,6 +18,7 @@ namespace Eshrimp.Shared.Infrastructure
 
         public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app)
         {
+            app.UseErrorHandling();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
