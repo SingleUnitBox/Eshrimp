@@ -8,5 +8,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Eshrimp.Shared.Abstractions\Eshrimp.Shared.Abstractions.csproj" />
   </ItemGroup>
+  <ItemGroup>
+  	<FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
 
 </Project>
