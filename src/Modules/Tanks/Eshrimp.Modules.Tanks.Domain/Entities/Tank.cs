@@ -2,5 +2,6 @@
 {
     public class Tank
     {
+        public Guid Id { get; set; }
     }
 }
