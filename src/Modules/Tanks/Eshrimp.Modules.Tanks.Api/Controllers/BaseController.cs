@@ -4,7 +4,7 @@ namespace Eshrimp.Modules.Tanks.Api.Controllers
 {
     [ApiController]
     [Route(TanksModule.BasePath + "/[controller]")]
-    public class BaseController : ControllerBase
+    internal class BaseController : ControllerBase
     {
     }
 }
