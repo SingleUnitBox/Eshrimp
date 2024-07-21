@@ -1,4 +1,5 @@
 ﻿using Eshrimp.Shared.Infrastructure.Exceptions;
+using Eshrimp.Shared.Infrastructure.Postgres;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
@@ -12,6 +13,7 @@ namespace Eshrimp.Shared.Infrastructure
         {
             services.AddControllers();
             services.AddErrorHandling();
+            services.AddPostgres();
 
             return services;
         }

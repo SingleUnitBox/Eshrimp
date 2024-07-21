@@ -14,7 +14,7 @@ namespace Eshrimp.Modules.Tanks.Api
 
         public void RegisterModule(IServiceCollection services)
         {
-            services.AddInfrastructure();
+
         }
 
         public void UseModule(IApplicationBuilder app)
