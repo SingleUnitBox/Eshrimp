@@ -1,4 +1,7 @@
 ﻿using Eshrimp.Shared.Abstractions.Modules;
+using Eshrimp.Modules.Tanks.Infrastructure;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Eshrimp.Modules.Tanks.Api
 {
@@ -9,12 +12,12 @@ namespace Eshrimp.Modules.Tanks.Api
 
         public string Path => BasePath;
 
-        public void RegisterModule()
+        public void RegisterModule(IServiceCollection services)
         {
-            
+            services.AddInfrastructure();
         }
 
-        public void UseModule()
+        public void UseModule(IApplicationBuilder app)
         {
             
         }

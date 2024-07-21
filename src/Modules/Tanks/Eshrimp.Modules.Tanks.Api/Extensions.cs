@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Eshrimp.Modules.Tanks.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Eshrimp.Modules.Tanks.Api
 {
@@ -6,6 +7,8 @@ namespace Eshrimp.Modules.Tanks.Api
     {
         public static IServiceCollection AddTanks(this IServiceCollection services)
         {
+            services.AddInfrastructure();
+
             return services;
         }
     }
