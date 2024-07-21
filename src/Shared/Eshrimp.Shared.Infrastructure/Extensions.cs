@@ -1,4 +1,6 @@
-﻿using Eshrimp.Shared.Infrastructure.Exceptions;
+using Eshrimp.Shared.Infrastructure.Api;
+using Eshrimp.Shared.Infrastructure.Exceptions;
+using Eshrimp.Shared.Infrastructure.Postgres;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
@@ -10,8 +12,14 @@ namespace Eshrimp.Shared.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .ConfigureApplicationPartManager(manager =>
+                {
+                    manager.FeatureProviders.Add(new InternalControllerFeatureProvider());
+                });
+
             services.AddErrorHandling();
+            services.AddPostgres();
 
             return services;
         }
