@@ -1,6 +1,7 @@
 using Eshrimp.Shared.Infrastructure.Api;
 using Eshrimp.Shared.Infrastructure.Exceptions;
 using Eshrimp.Shared.Infrastructure.Postgres;
+using Eshrimp.Shared.Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
@@ -21,6 +22,7 @@ namespace Eshrimp.Shared.Infrastructure
 
             services.AddErrorHandling();
             services.AddPostgres();
+            services.AddHostedService<AppInitializer>();
 
             return services;
         }
