@@ -8,7 +8,7 @@ var services = builder.Services;
 builder.Host.ConfigureModules();
 var assemblies = ModuleLoader.LoadAssemblies(builder.Configuration);
 var modules = ModuleLoader.LoadModules(assemblies);
-services.AddInfrastructure();
+services.AddInfrastructure(assemblies, modules);
 services.RegisterModules(modules);
 
 
