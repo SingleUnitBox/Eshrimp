@@ -5,18 +5,46 @@ namespace Eshrimp.Bootstrapper
 {
     internal static class ModuleLoader
     {
-        public static IList<Assembly> LoadAssemblies()
+        public static IList<Assembly> LoadAssemblies(IConfiguration configuration)
         {
-            var assemblies = AppDomain.CurrentDomain.GetAssemblies()
-                .ToList();
-            var locations = assemblies.Where(l => !l.IsDynamic)
-                .Select(x => x.Location)
+            const string modulePart = "Eshrimp.Modules.";
+            var assemblies = AppDomain.CurrentDomain
+             .GetAssemblies()
+             .OrderByDescending(x => x.Location)
+             .ToList();
+
+            var locations = assemblies
+                .Where(a => !a.IsDynamic)
+                .Select(a => a.Location)
                 .ToArray();
-            var files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll")
-                .Where(x => !locations.Contains(x, StringComparer.InvariantCultureIgnoreCase))
+
+            var files = Directory
+                .GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll")
+                .Where(l => !locations.Contains(l, StringComparer.InvariantCultureIgnoreCase))
                 .ToList();
 
-            files.ForEach(x => assemblies.Add(AppDomain.CurrentDomain.Load(AssemblyName.GetAssemblyName(x))));
+            var disabledModules = new List<string>();
+            foreach (var file in files)
+            {
+                if (!file.Contains(modulePart))
+                {
+                    continue;
+                }
+
+                var moduleName = file.Split(modulePart)[1].Split('.')[0];
+                var enabled = configuration.GetValue<bool>($"{moduleName}:module:enabled");
+                if (!enabled)
+                {
+                    disabledModules.Add(file);
+                }
+            }
+
+            foreach (var disabledModule in disabledModules)
+            {
+                files.Remove(disabledModule);
+            }
+
+            files.ForEach(f => assemblies.Add(AppDomain.CurrentDomain.Load(AssemblyName.GetAssemblyName(f))));
 
             return assemblies;
         }

@@ -1,13 +1,14 @@
 using Eshrimp.Bootstrapper;
-using Eshrimp.Modules.Tanks.Api;
 using Eshrimp.Shared.Infrastructure;
+using Eshrimp.Shared.Infrastructure.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
-services.AddInfrastructure();
-var assemblies = ModuleLoader.LoadAssemblies();
+builder.Host.ConfigureModules();
+var assemblies = ModuleLoader.LoadAssemblies(builder.Configuration);
 var modules = ModuleLoader.LoadModules(assemblies);
+services.AddInfrastructure();
 services.RegisterModules(modules);
 
 

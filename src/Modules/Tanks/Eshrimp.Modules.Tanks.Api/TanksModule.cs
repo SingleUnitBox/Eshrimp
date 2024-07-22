@@ -1,12 +1,13 @@
-﻿using Eshrimp.Modules.Tanks.Infrastructure;
+﻿using Eshrimp.Modules.Tanks.Application;
+using Eshrimp.Modules.Tanks.Domain;
+using Eshrimp.Modules.Tanks.Infrastructure;
 using Eshrimp.Shared.Abstractions.Modules;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Eshrimp.Modules.Tanks.Api
 {
-    public class TanksModule : IModule
+    internal class TanksModule : IModule
     {
         public const string BasePath = "tanks-module";
         public string Name => "Tanks";
@@ -14,6 +15,8 @@ namespace Eshrimp.Modules.Tanks.Api
 
         public void RegisterModule(IServiceCollection services)
         {
+            services.AddDomain();
+            services.AddApplication();
             services.AddInfrastructure();
         }
 

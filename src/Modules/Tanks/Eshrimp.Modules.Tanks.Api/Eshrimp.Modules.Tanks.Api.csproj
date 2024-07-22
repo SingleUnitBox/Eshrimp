@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="module.development.tanks.json" />
+    <None Remove="module.tanks.development.json" />
     <None Remove="module.tanks.json" />
   </ItemGroup>
 
@@ -14,7 +14,7 @@
     <Content Include="module.tanks.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="module.development.tanks.json">
+    <Content Include="module.tanks.development.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
