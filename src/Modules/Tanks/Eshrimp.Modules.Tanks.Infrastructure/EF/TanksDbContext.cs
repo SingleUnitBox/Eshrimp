@@ -6,6 +6,7 @@ namespace Eshrimp.Modules.Tanks.Infrastructure.EF
     internal sealed class TanksDbContext : DbContext
     {
         public DbSet<Tank> Tanks { get; set; }
+        public DbSet<Shrimp> Shrimps { get; set; }
 
         public TanksDbContext(DbContextOptions<TanksDbContext> options)
             : base(options)

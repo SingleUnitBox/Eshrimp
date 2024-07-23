@@ -30,16 +30,16 @@ namespace Eshrimp.Shared.Infrastructure.Services
             var tasks = new List<Task>();
             using var scope = _serviceProvider.CreateScope();
             {
-                //foreach (var dbContextType in dbContextTypes)
-                //{
-                //    var dbContext = scope.ServiceProvider.GetService(dbContextType) as DbContext;
-                //    if (dbContext is null)
-                //    {
-                //        continue;
-                //    }
+                foreach (var dbContextType in dbContextTypes)
+                {
+                    var dbContext = scope.ServiceProvider.GetService(dbContextType) as DbContext;
+                    if (dbContext is null)
+                    {
+                        continue;
+                    }
 
-                //    tasks.Add(dbContext.Database.MigrateAsync(cancellationToken));
-                //}
+                    tasks.Add(dbContext.Database.MigrateAsync(cancellationToken));
+                }
             }
 
             await Task.WhenAll(tasks);

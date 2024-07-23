@@ -1,4 +1,5 @@
 ﻿using Eshrimp.Modules.Tanks.Domain.ValueObjects;
+using Eshrimp.Shared.Abstractions.Kernel.Types;
 
 namespace Eshrimp.Modules.Tanks.Domain.Entities
 {
@@ -7,6 +8,12 @@ namespace Eshrimp.Modules.Tanks.Domain.Entities
         public ShrimpId Id { get; private set; }
         public ShrimpName Name { get; private set; }
         public Species Species { get; private set; }
+        public Tank Tank { get; private set; }
+
+        private Shrimp()
+        {
+            
+        }
 
         private Shrimp(Guid id)
         {

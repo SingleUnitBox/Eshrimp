@@ -3,6 +3,7 @@ using System;
 using Eshrimp.Modules.Tanks.Infrastructure.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Eshrimp.Modules.Tanks.Infrastructure.EF.Migrations
 {
     [DbContext(typeof(TanksDbContext))]
-    partial class TanksDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240723225636_EditTankAndShrimp")]
+    partial class EditTankAndShrimp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
