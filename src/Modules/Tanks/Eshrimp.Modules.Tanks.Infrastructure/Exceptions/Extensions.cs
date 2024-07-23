@@ -8,7 +8,7 @@ namespace Eshrimp.Modules.Tanks.Infrastructure.Exceptions
     {
         public static IServiceCollection AddErrorHandling(this IServiceCollection services)
         {
-            services.AddSingleton<IExceptionToResponseMapper, TanksExceptionToResponseMapper>();
+            //services.AddSingleton<IExceptionToResponseMapper, TanksExceptionToResponseMapper>();
 
             return services;
         }

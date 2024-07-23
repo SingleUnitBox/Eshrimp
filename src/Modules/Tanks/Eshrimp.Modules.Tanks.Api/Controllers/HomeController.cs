@@ -8,7 +8,8 @@ namespace Eshrimp.Modules.Tanks.Api.Controllers
     internal class HomeController : BaseController
     {
         [HttpGet]
-        public ActionResult<string> Get() => "Tanks API";
-        //public ActionResult<string> Get() => throw new InvalidTankCapacityException(3.26);
+        //public ActionResult<string> Get() => "Tanks API";
+
+        public ActionResult<string> Get() => throw new InvalidShrimpNameException("Crab");
     }
 }

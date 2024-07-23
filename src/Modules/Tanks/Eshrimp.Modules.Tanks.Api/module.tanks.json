@@ -2,7 +2,7 @@
   "tanks": {
     "module": {
       "name": "Tanks",
-      "enabled": false
+      "enabled": true
     }
   }
 }
