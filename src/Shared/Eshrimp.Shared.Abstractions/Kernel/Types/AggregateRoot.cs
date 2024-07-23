@@ -2,8 +2,8 @@
 {
     public class AggregateRoot<T>
     {
-        public T Id { get; private set; }
-        public int Version { get; private set; }
+        public T Id { get; protected set; }
+        public int Version { get; protected set; }
         public IEnumerable<IDomainEvent> Events => _domainEvents;
 
         private readonly List<IDomainEvent> _domainEvents = new();

@@ -10,6 +10,6 @@ namespace Eshrimp.Modules.Tanks.Api.Controllers
         [HttpGet]
         //public ActionResult<string> Get() => "Tanks API";
 
-        public ActionResult<string> Get() => throw new InvalidShrimpNameException("Crab");
+        public ActionResult<string> Get() => throw new CannotAddShrimpToUncycledTankException(DateTime.UtcNow);
     }
 }

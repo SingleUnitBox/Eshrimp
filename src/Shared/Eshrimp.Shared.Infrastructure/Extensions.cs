@@ -1,8 +1,10 @@
 using Eshrimp.Shared.Abstractions.Modules;
+using Eshrimp.Shared.Abstractions.Time;
 using Eshrimp.Shared.Infrastructure.Api;
 using Eshrimp.Shared.Infrastructure.Exceptions;
 using Eshrimp.Shared.Infrastructure.Postgres;
 using Eshrimp.Shared.Infrastructure.Services;
+using Eshrimp.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
@@ -56,6 +58,7 @@ namespace Eshrimp.Shared.Infrastructure
                     manager.FeatureProviders.Add(new InternalControllerFeatureProvider());
                 });
 
+            services.AddSingleton<IClock, ClockUtc>();
             services.AddErrorHandling();
             services.AddPostgres();
             services.AddHostedService<AppInitializer>();
