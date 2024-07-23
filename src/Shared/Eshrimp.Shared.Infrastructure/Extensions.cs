@@ -2,6 +2,7 @@ using Eshrimp.Shared.Abstractions.Modules;
 using Eshrimp.Shared.Abstractions.Time;
 using Eshrimp.Shared.Infrastructure.Api;
 using Eshrimp.Shared.Infrastructure.Exceptions;
+using Eshrimp.Shared.Infrastructure.Kernel;
 using Eshrimp.Shared.Infrastructure.Postgres;
 using Eshrimp.Shared.Infrastructure.Services;
 using Eshrimp.Shared.Infrastructure.Time;
@@ -58,9 +59,11 @@ namespace Eshrimp.Shared.Infrastructure
                     manager.FeatureProviders.Add(new InternalControllerFeatureProvider());
                 });
 
-            services.AddSingleton<IClock, ClockUtc>();
+            services.AddDomainEvent(assemblies);
             services.AddErrorHandling();
             services.AddPostgres();
+
+            services.AddSingleton<IClock, ClockUtc>();
             services.AddHostedService<AppInitializer>();
 
             return services;
