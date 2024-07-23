@@ -12,7 +12,7 @@ namespace Eshrimp.Modules.Tanks.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddErrorHandling();
-            services.AddPostgres<TanksDbContext>();
+            services.AddTanksPostgres();
 
             return services;
         }
