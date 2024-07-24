@@ -4,6 +4,6 @@ namespace Eshrimp.Modules.Tanks.Application.Commands
 {
     internal record AddTank(DateTime setUpDate) : ICommand
     {
-        public Guid Id => Guid.NewGuid();
+        public Guid Id { get; } = Guid.NewGuid();
     }
 }

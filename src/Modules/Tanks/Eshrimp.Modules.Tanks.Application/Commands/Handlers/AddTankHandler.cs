@@ -27,7 +27,7 @@ namespace Eshrimp.Modules.Tanks.Application.Commands.Handlers
             }
 
             tank = Tank.Create(command.Id, command.setUpDate, _clock.Current());
-            await _tankRepository.AddSTankAsync(tank);
+            await _tankRepository.AddTankAsync(tank);
         }
     }
 }
