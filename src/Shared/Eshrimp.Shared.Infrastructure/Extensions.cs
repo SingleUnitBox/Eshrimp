@@ -5,6 +5,7 @@ using Eshrimp.Shared.Infrastructure.Commands;
 using Eshrimp.Shared.Infrastructure.Exceptions;
 using Eshrimp.Shared.Infrastructure.Kernel;
 using Eshrimp.Shared.Infrastructure.Postgres;
+using Eshrimp.Shared.Infrastructure.Queries;
 using Eshrimp.Shared.Infrastructure.Services;
 using Eshrimp.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
@@ -64,6 +65,7 @@ namespace Eshrimp.Shared.Infrastructure
             services.AddDomainEvent(assemblies);
             services.AddErrorHandling();
             services.AddPostgres();
+            services.AddQueries(assemblies);
 
             services.AddSingleton<IClock, ClockUtc>();
             services.AddHostedService<AppInitializer>();
