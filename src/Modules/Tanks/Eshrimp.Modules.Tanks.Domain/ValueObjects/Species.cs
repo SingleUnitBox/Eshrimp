@@ -14,14 +14,15 @@ namespace Eshrimp.Modules.Tanks.Domain.ValueObjects
                 throw new EmptyShrimpSpeciesException();
             }
 
-            if (!SpeciesTypes.GetTypes().Contains(value.ToLowerInvariant()))
+            if (!SpeciesTypes.GetTypes().Contains(value))
             {
                 throw new InvalidShrimpSpeciesException(value);
             }
 
-            Value = value.ToLowerInvariant();
+            Value = value;
         }
 
         public static implicit operator Species(string value) => new Species(value);
+        public static implicit operator string(Species species) => species.Value;
     }
 }

@@ -13,7 +13,7 @@ namespace Eshrimp.Modules.Tanks.Domain.Types
             var speciesTypes = typeof(SpeciesTypes)
                 .GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
                 .Where(field => field.IsLiteral && !field.IsInitOnly)
-                .Select(field => field.GetValue(null).ToString().ToLowerInvariant())
+                .Select(field => field.GetValue(null).ToString())
                 .ToList();
 
             return speciesTypes;

@@ -6,5 +6,14 @@ namespace Eshrimp.Modules.Tanks.Api.Controllers
     [Route(TanksModule.BasePath + "/[controller]")]
     internal class BaseController : ControllerBase
     {
+        public ActionResult<T> OkOrNotFound<T>(T model)
+        {
+            if (model is null)
+            {
+                return NotFound();
+            }
+
+            return Ok(model);
+        }
     }
 }
