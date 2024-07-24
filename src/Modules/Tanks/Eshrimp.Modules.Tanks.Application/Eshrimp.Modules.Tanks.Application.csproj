@@ -9,4 +9,8 @@
     <ProjectReference Include="..\Eshrimp.Modules.Tanks.Domain\Eshrimp.Modules.Tanks.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\Handlers\" />
+  </ItemGroup>
+
 </Project>
