@@ -12,6 +12,7 @@ namespace Eshrimp.Shared.Infrastructure.Postgres
         {
             var options = services.GetOptions<PostgresOptions>(PostgresSection);
             services.AddSingleton(options);
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
             return services;
         }

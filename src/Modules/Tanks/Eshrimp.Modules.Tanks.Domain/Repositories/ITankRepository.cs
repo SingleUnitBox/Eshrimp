@@ -5,7 +5,7 @@ namespace Eshrimp.Modules.Tanks.Domain.Repositories
 {
     public interface ITankRepository
     {
-        Task AddSTankAsync(Tank tank);
+        Task AddTankAsync(Tank tank);
         Task UpdateTankAsync(Tank tank);
         Task<Tank> GetTankAsync(AggregateId tankId);
         Task<IEnumerable<Tank>> GetTanksAsync();

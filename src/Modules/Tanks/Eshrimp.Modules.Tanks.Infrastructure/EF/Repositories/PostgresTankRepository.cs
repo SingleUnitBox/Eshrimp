@@ -16,7 +16,7 @@ namespace Eshrimp.Modules.Tanks.Infrastructure.EF.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task AddSTankAsync(Tank tank)
+        public async Task AddTankAsync(Tank tank)
         {
             await _tanks.AddAsync(tank);
             await _dbContext.SaveChangesAsync();
