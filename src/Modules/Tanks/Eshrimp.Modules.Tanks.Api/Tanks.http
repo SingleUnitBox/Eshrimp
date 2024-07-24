@@ -1,4 +1,30 @@
-@url = http://localhost:5000
+@url = http://localhost:5000/tanks-module
+
+@tankId = d33872ce-f3d6-4d9e-9fea-b14255db410b
+
+###
+GET http://localhost:5000
 
 ###
 GET {{url}}
+
+###
+GET {{url}}/tanks/{{tankId}}
+
+###
+POST {{url}}/tanks
+Content-Type: application/json
+
+{
+    "setUpDate": "2024-07-15"
+}
+
+###
+POST {{url}}/shrimps
+Content-Type: application/json
+
+{
+    "name": "TaiwanBee",
+    "species": "Caridina",
+    "tankId": "{{tankId}}"
+}

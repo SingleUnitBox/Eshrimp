@@ -12,15 +12,29 @@ namespace Eshrimp.Shared.Infrastructure.Queries
             _serviceProvider = serviceProvider;
         }
 
-        public async Task<TResult> QueryAsync<TQuery, TResult>(TQuery query)
-            where TQuery : class, IQuery<TResult>
+        //public async Task<TResult> QueryAsync<TQuery, TResult>(TQuery query)
+        //    where TQuery : class, IQuery<TResult>
+        //{           
+        //    using var scope = _serviceProvider.CreateScope();
+        //    {
+        //        var queryHandlerType = typeof(IQueryHandler<TQuery, TResult>);
+        //        var queryHandler = scope.ServiceProvider.GetRequiredService(queryHandlerType);
+        //        return await (Task<TResult>)queryHandlerType
+        //            .GetMethod(nameof(IQueryHandler<TQuery, TResult>.HandleAsync))
+        //            ?.Invoke(queryHandler, new[] { query });
+        //    }
+        //}
+
+        public async Task<TResult> QueryAsync<TResult>(IQuery<TResult> query)
         {
-            var queryHandlerType = typeof(IQueryHandler<TQuery, TResult>);
             using var scope = _serviceProvider.CreateScope();
             {
+                var queryHandlerType = typeof(IQueryHandler<,>)
+                    .MakeGenericType(query.GetType(), typeof(TResult));
                 var queryHandler = scope.ServiceProvider.GetRequiredService(queryHandlerType);
+
                 return await (Task<TResult>)queryHandlerType
-                    .GetMethod(nameof(IQueryHandler<TQuery, TResult>.HandleAsync))
+                    .GetMethod(nameof(IQueryHandler<IQuery<TResult>, TResult>.HandleAsync))
                     ?.Invoke(queryHandler, new[] { query });
             }
         }

@@ -23,5 +23,6 @@ namespace Eshrimp.Modules.Tanks.Domain.ValueObjects
         }
 
         public static implicit operator ShrimpName(string value) => new ShrimpName(value);
+        public static implicit operator string(ShrimpName name) => name.Value;
     }
 }

@@ -30,6 +30,11 @@ namespace Eshrimp.Modules.Tanks.Domain.Entities
             Species = species;
         }
 
+        public void AssignTank(Tank tank)
+        {
+            Tank = tank;
+        }
+
         public static Shrimp Create(Guid id, string name, string species)
         {
             var shrimp = new Shrimp(id);
