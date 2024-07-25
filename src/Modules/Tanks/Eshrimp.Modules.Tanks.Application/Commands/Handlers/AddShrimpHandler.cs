@@ -1,7 +1,9 @@
-﻿using Eshrimp.Modules.Tanks.Application.Exceptions;
+﻿using Eshrimp.Modules.Tanks.Application.Events;
+using Eshrimp.Modules.Tanks.Application.Exceptions;
 using Eshrimp.Modules.Tanks.Domain.Entities;
 using Eshrimp.Modules.Tanks.Domain.Repositories;
 using Eshrimp.Shared.Abstractions.Commands;
+using Eshrimp.Shared.Abstractions.Events;
 
 namespace Eshrimp.Modules.Tanks.Application.Commands.Handlers
 {
@@ -9,12 +11,15 @@ namespace Eshrimp.Modules.Tanks.Application.Commands.Handlers
     {
         private readonly IShrimpRepository _shrimpRepository;
         private readonly ITankRepository _tankRepository;
+        private readonly IEventDispatcher _eventDispatcher;
 
         public AddShrimpHandler(IShrimpRepository shrimpRepository,
-            ITankRepository tankRepository)
+            ITankRepository tankRepository,
+            IEventDispatcher eventDispatcher)
         {
             _shrimpRepository = shrimpRepository;
             _tankRepository = tankRepository;
+            _eventDispatcher = eventDispatcher;
         }
 
         public async Task HandleAsync(AddShrimp command)
@@ -38,6 +43,7 @@ namespace Eshrimp.Modules.Tanks.Application.Commands.Handlers
             }
 
             await _shrimpRepository.AddShrimpAsync(shrimp);
+            await _eventDispatcher.DispatchAsync(new ShrimpAdded(shrimp.Id));
         }
     }
 }

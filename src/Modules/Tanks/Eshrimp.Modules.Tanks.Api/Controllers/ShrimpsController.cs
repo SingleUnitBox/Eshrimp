@@ -20,7 +20,7 @@ namespace Eshrimp.Modules.Tanks.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<ShrimpDto>> GetShrimp(Guid id)
+        public async Task<ActionResult<ShrimpDetailsDto>> GetShrimp(Guid id)
             => OkOrNotFound(await _queryDispatcher.QueryAsync(new GetShrimp(id)));
 
         [HttpPost]

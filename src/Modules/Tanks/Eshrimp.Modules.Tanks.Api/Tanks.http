@@ -2,6 +2,8 @@
 
 @tankId = d33872ce-f3d6-4d9e-9fea-b14255db410b
 
+@shrimpId = 02d8c7c7-1b8c-48c6-a457-c7be51e56521
+
 ###
 GET http://localhost:5000
 
@@ -20,11 +22,14 @@ Content-Type: application/json
 }
 
 ###
+GET {{url}}/shrimps/{{shrimpId}}
+
+###
 POST {{url}}/shrimps
 Content-Type: application/json
 
 {
-    "name": "TaiwanBee",
+    "name": "RedRuby",
     "species": "Caridina",
     "tankId": "{{tankId}}"
 }

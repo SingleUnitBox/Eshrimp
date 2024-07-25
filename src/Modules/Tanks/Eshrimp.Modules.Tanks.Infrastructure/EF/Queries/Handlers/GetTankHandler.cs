@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Eshrimp.Modules.Tanks.Infrastructure.EF.Queries.Handlers
 {
-    internal sealed class GetTankHandler : IQueryHandler<GetTank, TankDto>
+    internal sealed class GetTankHandler : IQueryHandler<GetTank, TankDetailsDto>
     {
         private readonly DbSet<Tank> _tanks;
 
@@ -17,7 +17,7 @@ namespace Eshrimp.Modules.Tanks.Infrastructure.EF.Queries.Handlers
             _tanks = dbContext.Tanks;
         }
 
-        public async Task<TankDto> HandleAsync(GetTank query)
+        public async Task<TankDetailsDto> HandleAsync(GetTank query)
         {
             var tank = await _tanks
                 .AsNoTracking()
@@ -28,7 +28,7 @@ namespace Eshrimp.Modules.Tanks.Infrastructure.EF.Queries.Handlers
                 throw new TankNotFoundException(query.Id);
             }
 
-            return tank.AsDto();
+            return tank.AsDetailsDto();
         }
     }
 }

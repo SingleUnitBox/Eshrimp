@@ -3,5 +3,5 @@ using Eshrimp.Shared.Abstractions.Queries;
 
 namespace Eshrimp.Modules.Tanks.Application.Queries
 {
-    public record GetShrimp(Guid Id) : IQuery<ShrimpDto>;
+    public record GetShrimp(Guid Id) : IQuery<ShrimpDetailsDto>;
 }

@@ -19,7 +19,7 @@ namespace Eshrimp.Modules.Tanks.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<TankDto>> GetTank(Guid id)
+        public async Task<ActionResult<TankDetailsDto>> GetTank(Guid id)
             => OkOrNotFound(await _queryDispatcher.QueryAsync(new GetTank(id)));
 
         [HttpPost]
