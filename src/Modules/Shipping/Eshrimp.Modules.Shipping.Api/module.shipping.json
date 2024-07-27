@@ -1,0 +1,8 @@
+{
+  "shipping": {
+    "module": {
+      "name": "Shipping",
+      "enabled": true
+    }
+  }
+}

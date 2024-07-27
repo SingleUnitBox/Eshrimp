@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Shipping\Eshrimp.Modules.Shipping.Api\Eshrimp.Modules.Shipping.Api.csproj" />
     <ProjectReference Include="..\..\Modules\Store\Eshrimp.Modules.Store.Api\Eshrimp.Modules.Store.Api.csproj" />
     <ProjectReference Include="..\..\Modules\Tanks\Eshrimp.Modules.Tanks.Api\Eshrimp.Modules.Tanks.Api.csproj" />
     <ProjectReference Include="..\..\Shared\Eshrimp.Shared.Infrastructure\Eshrimp.Shared.Infrastructure.csproj" />

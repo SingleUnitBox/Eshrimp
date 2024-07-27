@@ -6,7 +6,8 @@ namespace Eshrimp.Modules.Store.Application.Events.External.Handlers
     {
         public Task HandleAsync(ShrimpAdded @event)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Added shrimp with id '{@event.ShrimpId}'");
+            return Task.CompletedTask;
         }
     }
 }

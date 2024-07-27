@@ -62,7 +62,8 @@ namespace Eshrimp.Shared.Infrastructure.Modules
                     registry.AddBroadcastRegistration(eventType, @event =>
                     (Task)eventDispatcherType
                         .GetMethod(nameof(eventDispatcher.DispatchAsync))
-                        ?.Invoke(eventDispatcher, new[] { @event }));
+                        ?.MakeGenericMethod(eventType)
+                        .Invoke(eventDispatcher, new[] { @event }));
                 }
 
                 return registry;

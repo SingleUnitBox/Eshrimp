@@ -21,5 +21,16 @@ namespace Eshrimp.Bootstrapper
 
             return services;
         }
+
+        public static IApplicationBuilder UseModules(this IApplicationBuilder app,
+            IEnumerable<IModule> modules)
+        {
+            foreach (var module in modules)
+            {
+                module.UseModule(app);
+            }
+
+            return app;
+        }
     }
 }

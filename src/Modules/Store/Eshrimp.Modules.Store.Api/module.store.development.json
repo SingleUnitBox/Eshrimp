@@ -1,0 +1,8 @@
+{
+  "store": {
+    "module": {
+      "name": "Store",
+      "enabled": true
+    }
+  }
+}

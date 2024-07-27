@@ -1,5 +1,4 @@
-﻿
-using Eshrimp.Modules.Tanks.Domain.Exceptions;
+﻿using Eshrimp.Modules.Tanks.Domain.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Eshrimp.Modules.Tanks.Api.Controllers

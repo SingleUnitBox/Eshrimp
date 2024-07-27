@@ -14,10 +14,7 @@ services.RegisterModules(modules);
 
 var app = builder.Build();
 app.UseInfrastructure();
-foreach (var module in modules)
-{
-    module.UseModule(app);
-}
+app.UseModules(modules);
 
 app.MapGet("/", () => "Hello from Eshrimp Bootstrapper");
 app.Run();

@@ -1,5 +1,5 @@
 @url = http://localhost:5000/tanks-module
-
+@url1 = http://localhost:5000/store-module
 @tankId = d33872ce-f3d6-4d9e-9fea-b14255db410b
 
 @shrimpId = 02d8c7c7-1b8c-48c6-a457-c7be51e56521
@@ -9,6 +9,9 @@ GET http://localhost:5000
 
 ###
 GET {{url}}
+
+###
+GET {{url1}}
 
 ###
 GET {{url}}/tanks/{{tankId}}
@@ -29,7 +32,7 @@ POST {{url}}/shrimps
 Content-Type: application/json
 
 {
-    "name": "RedRuby",
+    "name": "BlueBolt",
     "species": "Caridina",
     "tankId": "{{tankId}}"
 }

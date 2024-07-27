@@ -3,8 +3,21 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="module.store.development.json" />
+    <None Remove="module.store.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="module.store.development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="module.store.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Eshrimp.Modules.Store.Infrastructure\Eshrimp.Modules.Store.Infrastructure.csproj" />
