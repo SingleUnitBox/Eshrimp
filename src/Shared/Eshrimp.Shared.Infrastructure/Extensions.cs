@@ -5,6 +5,7 @@ using Eshrimp.Shared.Infrastructure.Commands;
 using Eshrimp.Shared.Infrastructure.Events;
 using Eshrimp.Shared.Infrastructure.Exceptions;
 using Eshrimp.Shared.Infrastructure.Kernel;
+using Eshrimp.Shared.Infrastructure.Messaging;
 using Eshrimp.Shared.Infrastructure.Modules;
 using Eshrimp.Shared.Infrastructure.Postgres;
 using Eshrimp.Shared.Infrastructure.Queries;
@@ -67,6 +68,7 @@ namespace Eshrimp.Shared.Infrastructure
             services.AddDomainEvent(assemblies);
             services.AddErrorHandling();
             services.AddEvents(assemblies);
+            services.AddMessaging();
             services.AddModuleRequests(assemblies);
             services.AddPostgres();
             services.AddQueries(assemblies);

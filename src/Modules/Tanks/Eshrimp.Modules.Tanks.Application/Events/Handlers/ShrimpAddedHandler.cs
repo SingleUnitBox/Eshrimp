@@ -6,7 +6,8 @@ namespace Eshrimp.Modules.Tanks.Application.Events.Handlers
     {
         public Task HandleAsync(ShrimpAdded @event)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Added shrimp with id '{@event.ShrimpId}' in 'tanks-module'.");
+            return Task.CompletedTask;
         }
     }
 }

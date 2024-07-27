@@ -1,6 +1,8 @@
-﻿namespace Eshrimp.Shared.Abstractions.Events
+﻿using Eshrimp.Shared.Abstractions.Messaging;
+
+namespace Eshrimp.Shared.Abstractions.Events
 {
-    public interface IEvent
+    public interface IEvent : IMessage
     {
     }
 }

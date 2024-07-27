@@ -4,6 +4,7 @@ using Eshrimp.Modules.Tanks.Domain.Entities;
 using Eshrimp.Modules.Tanks.Domain.Repositories;
 using Eshrimp.Shared.Abstractions.Commands;
 using Eshrimp.Shared.Abstractions.Events;
+using Eshrimp.Shared.Abstractions.Messaging;
 using Eshrimp.Shared.Abstractions.Modules;
 
 namespace Eshrimp.Modules.Tanks.Application.Commands.Handlers
@@ -14,16 +15,19 @@ namespace Eshrimp.Modules.Tanks.Application.Commands.Handlers
         private readonly ITankRepository _tankRepository;
         private readonly IEventDispatcher _eventDispatcher;
         private readonly IModuleClient _moduleClient;
+        private readonly IMessageBroker _messageBroker;
 
         public AddShrimpHandler(IShrimpRepository shrimpRepository,
             ITankRepository tankRepository,
             IEventDispatcher eventDispatcher,
-            IModuleClient moduleClient)
+            IModuleClient moduleClient,
+            IMessageBroker messageBroker)
         {
             _shrimpRepository = shrimpRepository;
             _tankRepository = tankRepository;
             _eventDispatcher = eventDispatcher;
             _moduleClient = moduleClient;
+            _messageBroker = messageBroker;
         }
 
         public async Task HandleAsync(AddShrimp command)
@@ -48,7 +52,7 @@ namespace Eshrimp.Modules.Tanks.Application.Commands.Handlers
 
             await _shrimpRepository.AddShrimpAsync(shrimp);
             //await _eventDispatcher.DispatchAsync(new ShrimpAdded(shrimp.Id));
-            await _moduleClient.PublishAsync(new ShrimpAdded(shrimp.Id));
+            await _messageBroker.PublishAsync(new ShrimpAdded(shrimp.Id));
         }
     }
 }
