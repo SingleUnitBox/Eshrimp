@@ -1,4 +1,6 @@
-﻿using Eshrimp.Shared.Abstractions.Modules;
+﻿using Convey;
+using Convey.MessageBrokers.RabbitMQ;
+using Eshrimp.Shared.Abstractions.Modules;
 
 namespace Eshrimp.Bootstrapper
 {
@@ -29,6 +31,8 @@ namespace Eshrimp.Bootstrapper
             {
                 module.UseModule(app);
             }
+            app.UseConvey();
+            app.UseRabbitMq();
 
             return app;
         }
