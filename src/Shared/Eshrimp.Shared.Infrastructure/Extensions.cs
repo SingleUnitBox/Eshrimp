@@ -1,3 +1,6 @@
+using Convey;
+using Convey.MessageBrokers.CQRS;
+using Convey.MessageBrokers.RabbitMQ;
 using Eshrimp.Shared.Abstractions.Modules;
 using Eshrimp.Shared.Abstractions.Time;
 using Eshrimp.Shared.Infrastructure.Api;
@@ -75,6 +78,10 @@ namespace Eshrimp.Shared.Infrastructure
 
             services.AddSingleton<IClock, ClockUtc>();
             services.AddHostedService<AppInitializer>();
+
+            services.AddConvey()
+                .AddRabbitMq()
+                .Build();
 
             return services;
         }

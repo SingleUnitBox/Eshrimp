@@ -1,3 +1,5 @@
+using Convey;
+using Convey.MessageBrokers.RabbitMQ;
 using Eshrimp.Bootstrapper;
 using Eshrimp.Shared.Infrastructure;
 using Eshrimp.Shared.Infrastructure.Modules;
